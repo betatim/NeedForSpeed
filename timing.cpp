@@ -1,3 +1,4 @@
+// (C) 2014 Ben Couturier, Tim Head, Gerhard Raven
 #include <iostream>
 #include <chrono>
 #include <cmath>
