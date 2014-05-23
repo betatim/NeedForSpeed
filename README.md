@@ -25,3 +25,18 @@ done;
 
 This creates three executables one for each method. The three methods
 are a home made binary search, std::lower_bound and std::find_if.
+
+
+Timers
+======
+
+timing.cpp is an example of how to measure the passage of time. Benchmarks
+all require some kind of time measurement. The more precise the clock
+the better. Though there are a lot of pitfalls when it comes to building
+a good benchmark, especially when it is a micro-benchmark.
+
+```
+clang++ -std=c++11 -stdlib=libc++ -O3 timing.cpp -o timing.x;
+```
+
+The timers which are part of the C++11 standard library are pretty good!
