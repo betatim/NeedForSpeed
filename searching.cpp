@@ -1,3 +1,4 @@
+// (C) 2014 Tim Head
 #include <iostream>
 #include <vector>
 #include <random>
