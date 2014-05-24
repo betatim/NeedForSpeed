@@ -17,11 +17,12 @@ Reading material
 Links to other places that collect information on this topic:
 
 * Andrei Alexandrescu talking about [Writing Quick Code in C++, 
-  Quickly][quickcpp] and [Three Optimization Tips for C++][threetips]
+  Quickly][quickcpp], [Three Optimization Tips for C++][threetips], and [Modern C++: What You Need to Know][moderncpp]
 * Agner Fog's excellent guide to fast C++ http://www.agner.org/optimize/
 
 [quickcpp]:http://channel9.msdn.com/Events/GoingNative/2013/Writing-Quick-Code-in-Cpp-Quickly
 [threetips]:https://www.facebook.com/notes/facebook-engineering/three-optimization-tips-for-c/10151361643253920
+[moderncpp]:http://channel9.msdn.com/Events/Build/2014/2-661
 
 Binary searches
 ===============
