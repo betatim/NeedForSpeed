@@ -17,7 +17,8 @@ Reading material
 Links to other places that collect information on this topic:
 
 * Andrei Alexandrescu talking about [Writing Quick Code in C++, 
-  Quickly][quickcpp], [Three Optimization Tips for C++][threetips], and [Modern C++: What You Need to Know][moderncpp]
+  Quickly][quickcpp] and [Three Optimization Tips for C++][threetips]
+* Herb Sutter's [Modern C++: What You Need to Know][moderncpp]
 * Agner Fog's excellent guide to fast C++ http://www.agner.org/optimize/
 
 [quickcpp]:http://channel9.msdn.com/Events/GoingNative/2013/Writing-Quick-Code-in-Cpp-Quickly
