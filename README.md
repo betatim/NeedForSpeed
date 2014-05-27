@@ -25,6 +25,7 @@ Links to other places that collect information on this topic:
 [threetips]:https://www.facebook.com/notes/facebook-engineering/three-optimization-tips-for-c/10151361643253920
 [moderncpp]:http://channel9.msdn.com/Events/Build/2014/2-661
 
+
 Binary searches
 ===============
 
@@ -55,3 +56,19 @@ clang++ -std=c++11 -stdlib=libc++ -O3 timing.cpp -o timing.x;
 ```
 
 The timers which are part of the C++11 standard library are pretty good!
+
+
+Cache sizes
+===========
+
+Do you know how big your various caches are? This example measures the
+throughput by reading from an array about 100MB in size. Each read
+uses a different `step size`, making it increasingly harder for the
+computer to prefetch elements of the array.
+
+```
+clang++ -std=c++11 -stdlib=libc++ -O3 cache_sizes.cpp -o cache.x;
+```
+
+It prints the step size as well as MB/s read for that step size. The script
+`cache_plot.gp` is a gnuplot script that will plot the results.
