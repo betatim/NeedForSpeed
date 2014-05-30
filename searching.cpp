@@ -52,7 +52,7 @@ public:
 std::vector<Hit>::iterator
 std_algorithm(std::vector<Hit>& hits, double desired) {
   auto first = std::lower_bound(hits.begin(), hits.end(), desired,
-				[](const Hit& a, const double& x)->bool{
+				[](const Hit& a, const double& x) {
 				  return a.x < x;
 				});
   return first;
@@ -62,7 +62,7 @@ std_algorithm(std::vector<Hit>& hits, double desired) {
 std::vector<Hit>::iterator
 std_find(std::vector<Hit>& hits, double desired) {
   auto first = std::find_if(hits.begin(), hits.end(),
-			    [&desired](const Hit& a)->bool{
+			    [&desired](const Hit& a) {
                               return a.x >= desired;
                             }
 			   );
