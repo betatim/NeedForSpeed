@@ -21,10 +21,19 @@ have to download and install it. It can be found at:
 
 https://software.intel.com/en-us/articles/intel-performance-counter-monitor-a-better-way-to-measure-cpu-utilization
 
+In order to install it, follow the instructions specified in the *_HOWTO.txt
+files. On a Mac, installing the IntelPerformanceCounterMonitor is as easy as
+running `sudo make install` in the `MacMSRDriver` sub-directory.
+
 Once you have installed it, edit $PERFSDK in the Makefile to point at the
 directory to which you unzip'ed the download. It will then attempt to
 copy what it needs from there.
 
+Be aware that the PCM tools will only work with certain Intel processors,
+quote:
+
+```Only Intel(R) processors are supported (Atom(R) and microarchitecture
+codename Nehalem, Westmere, Sandy Bridge and Ivy Bridge)```
 
 Getting started
 ===============
