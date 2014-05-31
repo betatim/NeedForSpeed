@@ -12,14 +12,20 @@ ifeq ($(UNAME), Darwin)
 LIB= -lpthread -lPcmMsr
 endif
 
+PCMHEADERS=msr.h pci.h cpucounters.h client_bw.h types.h \
+width_extender.h utils.h
+PCMCODES=msr.cpp pci.cpp cpucounters.cpp client_bw.cpp
+
 all: copy example search
 
 copy:
-	cp -a $(PERFSDK)/msr.h $(PERFSDK)/pci.h $(PERFSDK)/cpucounters.h \
-	 $(PERFSDK)/client_bw.h $(PERFSDK)/types.h $(PERFSDK)/width_extender.h \
-	 $(PERFSDK)/utils.h .
-	cp -a $(PERFSDK)/msr.cpp $(PERFSDK)/pci.cpp $(PERFSDK)/cpucounters.cpp \
-	 $(PERFSDK)/client_bw.cpp .
+	$(foreach header,$(PCMHEADERS), cp -a $(PERFSDK)/$(header) $(header);)
+	$(foreach code,$(PCMCODES), cp -a $(PERFSDK)/$(code) $(code);)
+#	cp -a $(PERFSDK)/msr.h $(PERFSDK)/pci.h $(PERFSDK)/cpucounters.h \
+#	 $(PERFSDK)/client_bw.h $(PERFSDK)/types.h $(PERFSDK)/width_extender.h \
+#	 $(PERFSDK)/utils.h .
+#	cp -a $(PERFSDK)/msr.cpp $(PERFSDK)/pci.cpp $(PERFSDK)/cpucounters.cpp \
+#	 $(PERFSDK)/client_bw.cpp .
 
 msr.o: msr.h msr.cpp
 	$(CC) $(OPT) -c msr.cpp
@@ -49,4 +55,4 @@ vectors: vectors.o msr.o pci.o cpucounters.o client_bw.o
 	$(CC) $(LIB) -o vectors.x $^
 
 clean:
-	rm -rf *.x *.o *~
+	rm -rf *.x *.o *~ $(PCMHEADERS) $(PCMCODES)
