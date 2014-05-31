@@ -21,11 +21,6 @@ all: copy example search
 copy:
 	$(foreach header,$(PCMHEADERS), cp -a $(PERFSDK)/$(header) $(header);)
 	$(foreach code,$(PCMCODES), cp -a $(PERFSDK)/$(code) $(code);)
-#	cp -a $(PERFSDK)/msr.h $(PERFSDK)/pci.h $(PERFSDK)/cpucounters.h \
-#	 $(PERFSDK)/client_bw.h $(PERFSDK)/types.h $(PERFSDK)/width_extender.h \
-#	 $(PERFSDK)/utils.h .
-#	cp -a $(PERFSDK)/msr.cpp $(PERFSDK)/pci.cpp $(PERFSDK)/cpucounters.cpp \
-#	 $(PERFSDK)/client_bw.cpp .
 
 msr.o: msr.h msr.cpp
 	$(CC) $(OPT) -c msr.cpp
