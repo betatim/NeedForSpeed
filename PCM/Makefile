@@ -50,3 +50,14 @@ vectors: vectors.o msr.o pci.o cpucounters.o client_bw.o
 
 clean:
 	rm -rf *.x *.o *~
+	rm -f client_bw.cpp
+	rm -f client_bw.h
+	rm -f cpucounters.cpp
+	rm -f cpucounters.h
+	rm -f msr.cpp
+	rm -f msr.h
+	rm -f pci.cpp
+	rm -f pci.h
+	rm -f types.h
+	rm -f utils.h
+	rm -f width_extender.h
