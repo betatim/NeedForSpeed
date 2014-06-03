@@ -1,7 +1,7 @@
 Simple Kalman Filter
 ====================
 
-This implements an incredibly simple Kalman filter. It uses [blaze-lib](blaze)
+This implements an incredibly simple Kalman filter. It uses [blaze-lib][blaze]
 to perform the matrix multiplications. `blaze-lib` knows about SIMD
 instructions.
 
@@ -15,4 +15,8 @@ installing `blaze-lib`.
 Requirements
 ============
 
-To use this you will have to install `blaze-lib` on your system.
+To use this you will have to [install][blazeinstall] `blaze-lib` on
+your system. `blaze-lib` needs [Boost][boost] so install that first.
+
+[blazeinstall]: https://code.google.com/p/blaze-lib/wiki/Configuration_and_Installation
+[boost]: http://www.boost.org/
