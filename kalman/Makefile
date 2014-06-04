@@ -1,17 +1,9 @@
-CC=/usr/bin/clang++ -std=c++11 -stdlib=libc++
-OPT= -O3 -DNDEBUG
+CXX=clang++
+CXXFLAGS=-std=c++11 -stdlib=libc++
+CXXFLAGS+=-O3 -DNDEBUG
 
-all: kalman
-
-%.o: %.cpp
-	$(CC) $(OPT) -c $<
-
-kalman: kalman.o
-	$(CC) $(LIB) -o kalman.x $^
-
-
-kalman_eigen.x: kalman_eigen.cpp
-	clang++ -O3 -std=c++11 -stdlib=libc++ -I/opt/local/include/eigen3/ -o kalman_eigen.x kalman_eigen.cpp
+all: kalman kalman_eigen
 
 clean:
-	rm -rf *.x *.o *~
+	rm -f kalman
+	rm -f kalman_eigen
