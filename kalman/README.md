@@ -18,5 +18,11 @@ Requirements
 To use this you will have to [install][blazeinstall] `blaze-lib` on
 your system. `blaze-lib` needs [Boost][boost] so install that first.
 
+Furthermore, [Eigen3][eigen3] is a requirement. You don't need to "install"
+Eigen since it's a template library and consists only of header files. However,
+you will have to specify the path to the headers in the Makefile or put them in
+your system's standard path for headers.
+
 [blazeinstall]: https://code.google.com/p/blaze-lib/wiki/Configuration_and_Installation
 [boost]: http://www.boost.org/
+[eigen3]: http://eigen.tuxfamily.org/
