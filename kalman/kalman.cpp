@@ -1,8 +1,9 @@
 #include <iostream>
 #include <vector>
-#include <chrono>
 
 #include <blaze/Math.h>
+
+#include "timer.hpp"
 
 #define TIMESTEP (8.5/20)
 
@@ -13,23 +14,6 @@ typedef blaze::StaticMatrix<float,1,2> M2x1;
 
 typedef M1x2 State;
 
-template <class T>
-void doNotOptimizeAway(T&& datum) {
-  asm volatile("" : "+r" (datum));
-}
-class Timer {
-private:
-  std::chrono::time_point<std::chrono::high_resolution_clock> start_time;
-public:
-  void start() {
-    start_time = std::chrono::high_resolution_clock::now();
-  }
-
-  double stop() {
-    auto stop_time = std::chrono::high_resolution_clock::now();
-    return double(std::chrono::duration_cast<std::chrono::nanoseconds>(stop_time - start_time).count());
-  }
-};
 
 void kalman(State& x, M2x2& P, Obs& obs) {
   // Performs one step of the Kalman filter.
