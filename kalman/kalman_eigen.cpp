@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#include <eigen/Core>
+#include <Eigen/Core>
 
 #include "timer.hpp"
 
